@@ -365,8 +365,8 @@ gulp.task(
     "build",
     "build-ts",
     combine,
-    minifyRelease,
-    generateDocumentation
+    minifyRelease
+    // generateDocumentation
   )
 );
 
@@ -1614,6 +1614,11 @@ ${source}
   // Intentionally ignored nested items
   publicModules.delete("KmlFeatureData");
   publicModules.delete("MaterialAppearance");
+  publicModules.delete("Base64Reader");
+  publicModules.delete("BlockReader");
+  publicModules.delete("BitChunkReader");
+  publicModules.delete("LZWReader");
+  publicModules.delete("GIFReader");
 
   if (publicModules.size !== 0) {
     throw new Error(
