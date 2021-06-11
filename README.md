@@ -1,3 +1,7 @@
+# A fork from cesium with other feature
+
+- animate gif
+
 <p align="center">
 <img src="https://github.com/CesiumGS/cesium/wiki/logos/Cesium_Logo_Color.jpg" width="50%" />
 </p>
@@ -17,7 +21,7 @@ CesiumJS is a JavaScript library for creating 3D globes and 2D maps in a web bro
 Visit the [Downloads page](https://cesium.com/downloads/) or use the npm module:
 
 ```
-npm install cesium
+npm install qcesium
 ```
 
 Have questions? Ask them on the [community forum](https://community.cesium.com/).
