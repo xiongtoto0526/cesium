@@ -11,7 +11,8 @@
       content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"
     />
     <title>Hello World!</title>
-    <script src="../Build/Cesium/Cesium.js"></script>
+    <!--    <script src="../Build/Cesium/Cesium.js"></script>-->
+    <!--    <script src="../Build/Cesium/Cesium.js"></script>-->
     <style>
       @import url(../Build/Cesium/Widgets/widgets.css);
       html,
@@ -27,8 +28,48 @@
   </head>
   <body>
     <div id="cesiumContainer"></div>
-    <script>
+    <script type="module">
+      window.CESIUM_BASE_URL = "../Source/";
+      import * as Cesium from "../Source/Cesium.js";
       var viewer = new Cesium.Viewer("cesiumContainer");
+      var destination = Cesium.Cartesian3.fromDegrees(
+        113.891537,
+        22.910166,
+        121211.51
+      );
+
+      let imageLayer = new Cesium.WebMapTileServiceImageryProvider({
+        url:
+          "http://t0.tianditu.gov.cn/vec_w/wmts?tk=" +
+          "514b0e934e178f1b5eb67449e858f0a7",
+        layer: "vec",
+        style: "default",
+        format: "tiles",
+        tileMatrixSetID: "w",
+        credit: "U. S. Geological Survey",
+      });
+      viewer.imageryLayers.addImageryProvider(imageLayer);
+
+      var urlRoadLayer = new Cesium.UrlTemplateImageryProvider({
+        url:
+          "https://tm.amap.com/trafficengine/mapabc/traffictile?v=1.0&x={x}&y={y}&z={z}&&t=",
+        customTags: { id: "road" },
+      });
+      viewer.imageryLayers.addImageryProvider(urlRoadLayer);
+
+      //       var helper = new Cesium.EventHelper();
+      //       helper.add(viewer.scene.globe.tileLoadProgressEvent, function (event) {
+      //         // debugger
+      //         // console.log("每次加载矢量切片都会进入这个回调");
+      //         if (event == 0) {
+      // //console.log(“这个是加载最后一个矢量切片的回调”);
+      //         }
+      //       });
+
+      viewer.camera.flyTo({
+        duration: 0,
+        destination: destination,
+      });
     </script>
   </body>
 </html>

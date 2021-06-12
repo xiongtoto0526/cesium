@@ -1,6 +1,6 @@
-import BoundingRectangle from "../Core/BoundingRectangle";
-import defaultValue from "../Core/defaultValue";
-import defined from "../Core/defined";
+import BoundingRectangle from "../Core/BoundingRectangle.js";
+import defaultValue from "../Core/defaultValue.js";
+import defined from "../Core/defined.js";
 // import defineProperties from '../Core/defineProperties';
 import DeveloperError from "../Core/DeveloperError.js";
 import loadArrayBuffer from "../Core/loadArrayBuffer.js";
