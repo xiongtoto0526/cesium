@@ -1,6 +1,6 @@
-import DeveloperError from "./DeveloperError";
-import RequestErrorEvent from "./RequestErrorEvent";
-import when from "../ThirdParty/when";
+import DeveloperError from "./DeveloperError.js";
+import RequestErrorEvent from "./RequestErrorEvent.js";
+import when from "../ThirdParty/when.js";
 
 /**
  * loadArrayBuffer

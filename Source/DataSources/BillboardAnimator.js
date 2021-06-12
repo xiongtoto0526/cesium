@@ -2,11 +2,11 @@ import BoundingRectangle from "../Core/BoundingRectangle";
 import defaultValue from "../Core/defaultValue";
 import defined from "../Core/defined";
 // import defineProperties from '../Core/defineProperties';
-import DeveloperError from "../Core/DeveloperError";
-import loadArrayBuffer from "../Core/loadArrayBuffer";
-import JulianDate from "../Core/JulianDate";
-import when from "../ThirdParty/when";
-import CallbackProperty from "./CallbackProperty";
+import DeveloperError from "../Core/DeveloperError.js";
+import loadArrayBuffer from "../Core/loadArrayBuffer.js";
+import JulianDate from "../Core/JulianDate.js";
+import when from "../ThirdParty/when.js";
+import CallbackProperty from "./CallbackProperty.js";
 
 /**
  * Base64Reader
